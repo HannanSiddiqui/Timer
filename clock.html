@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clock</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  </head>
+  <script>
+   let a;
+        let date;
+        let time;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+            a = new Date(); 
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time + "<br>on " + date;
+        }, 1000);
+
+    
+  </script>
+  <body>
+  
+  <!-- As a heading -->
+  <nav class="navbar navbar-dark bg-dark py-3">
+    <span class="navbar-brand mb-0 h1">Timer</span>
+  </nav>
+  <div class="container my-4">
+    <div class="jumbotron my-4">
+        <h1 class="display-4">The current time is: <span id="time"></span> </h1>
+        <hr class="my-4">
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
